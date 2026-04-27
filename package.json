@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ai-sdk/google-vertex": "^4.0.112",
+    "@ai-sdk/google": "^3.0.64",
     "@base-ui/react": "^1.4.1",
     "@prisma/client": "^6.19.3",
     "ai": "^6.0.168",

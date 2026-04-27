@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
 import prisma from "@/lib/prisma";
 import { generateText } from "ai";
-import { vertex } from "@ai-sdk/google-vertex";
+import { google } from "@ai-sdk/google";
 
 export async function POST(req: NextRequest) {
   try {
@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
     try {
       const prompt = `You are a helpful assistant that transcribes voice and video messages. If audio does not contain any speech say: '_Audio does not contain any speech_'. Apply line breaks when necessary. For paragraphs, use double line breaks.`;
       const result = await generateText({
-        model: vertex("gemini-2.5-flash"),
+        model: google("gemini-2.5-flash"),
         messages: [
           {
             role: "system",
